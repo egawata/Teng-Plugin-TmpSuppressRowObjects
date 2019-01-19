@@ -42,10 +42,15 @@ Teng::Plugin::TmpSuppressRowObjects - add methods with temporary use of suppress
 
 =head1 SYNOPSIS
 
-    use Teng::Plugin::TmpSuppressRowObjects;
+    #  In your Model ...
+    package Your::Model;
+    use parent qw(Teng);
+
+    __PACKAGE__->load_plugin('TmpSuppressRowObjects');
+
 
     #  In case suppress_row_objects = 0 ...
-    my $teng = Teng->new(dbh => $dbh, suppress_row_objects => 0);
+    my $teng = Your::Model->new(dbh => $dbh, suppress_row_objects => 0);
     my $row;
 
     #  same usage with original 'search'
