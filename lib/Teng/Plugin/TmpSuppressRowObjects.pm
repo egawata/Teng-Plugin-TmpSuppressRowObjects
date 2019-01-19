@@ -11,10 +11,10 @@ our @EXPORT;
     my @origs = qw(
         insert
         search
-        search_named
         single
         search_by_sql
         single_by_sql
+        search_named
         single_named
     );
     my $suffix = '_hashref';
