@@ -21,9 +21,6 @@ sub create_testdb {
             primary key (id)
         )
     });
-    $dbh->do(q{
-        INSERT INTO test_table (id, name) VALUES (1, 'Apple')
-    });
 
     my $db = TestDB::Model->new(dbh => $dbh, suppress_row_objects => 0);
     return $db;

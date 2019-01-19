@@ -8,6 +8,9 @@ use t::Util;
 use Test::More;
 
 my $db = create_testdb();
+$db->dbh->do(q{
+    INSERT INTO test_table (id, name) VALUES (1, 'Apple')
+});
 
 subtest 'search_by_sql_hashref' => sub {
     my ($row) = $db->search_by_sql_hashref(q{
