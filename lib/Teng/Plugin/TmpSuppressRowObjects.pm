@@ -5,7 +5,22 @@ use warnings;
 
 our $VERSION = "0.01";
 
+our @EXPORT;
 
+BEGIN {
+    @EXPORT = qw(
+        search_by_sql_hashref
+    );
+    no strict 'refs';
+    for my $method (@EXPORT) {
+        (my $orig = $method) =~ s/_hashref$//;
+        *{__PACKAGE__ . '::' . $method} = sub {
+            my $self = shift;
+            local $self->{suppress_row_objects} = 1;
+            $self->$orig(@_);
+        };
+    }
+}
 
 1;
 __END__
