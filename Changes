@@ -2,6 +2,9 @@ Revision history for Perl extension Teng-Plugin-TmpSuppressRowObjects
 
 {{$NEXT}}
 
+0.02 2019-01-19T04:34:23Z
+    - update synopsis
+
 0.01 2019-01-19T04:03:31Z
 
     - original version
