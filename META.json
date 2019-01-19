@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Teng::Plugin::TmpSuppressRowObjects",
    "author" : [
       "egawata <egawa.takashi@gmail.com>"
    ],
