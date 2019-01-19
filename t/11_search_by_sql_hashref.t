@@ -2,25 +2,12 @@ use strict;
 use warnings;
 use utf8;
 
-use lib qw(lib t/lib);
+use lib qw(. lib t/lib);
 
+use t::Util;
 use Test::More;
-use DBI;
-use TestDB::Model;
 
-my $dbh = DBI->connect('dbi:SQLite::memory:','','',{RaiseError => 1, PrintError => 0, AutoCommit => 1});
-my $db = TestDB::Model->new(dbh => $dbh, suppress_row_objects => 0);
-
-$dbh->do(q{
-    CREATE TABLE test_table (
-        id integer not null,
-        name varchar(255),
-        primary key (id)
-    )
-});
-$dbh->do(q{
-    INSERT INTO test_table (id, name) VALUES (1, 'Apple')
-});
+my $db = create_testdb();
 
 subtest 'search_by_sql_hashref' => sub {
     my ($row) = $db->search_by_sql_hashref(q{
