@@ -7,7 +7,7 @@ our $VERSION = "0.01";
 
 our @EXPORT;
 
-BEGIN {
+{
     my @origs = qw(
         insert
         search
