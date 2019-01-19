@@ -8,12 +8,21 @@ our $VERSION = "0.01";
 our @EXPORT;
 
 BEGIN {
-    @EXPORT = qw(
-        search_by_sql_hashref
+    my @origs = qw(
+        insert
+        search
+        search_named
+        single
+        search_by_sql
+        single_by_sql
+        single_named
     );
+    my $suffix = '_hashref';
+
     no strict 'refs';
-    for my $method (@EXPORT) {
-        (my $orig = $method) =~ s/_hashref$//;
+    for my $orig (@origs) {
+        my $method = $orig . $suffix;
+        push @EXPORT, $method;
         *{__PACKAGE__ . '::' . $method} = sub {
             my $self = shift;
             local $self->{suppress_row_objects} = 1;
