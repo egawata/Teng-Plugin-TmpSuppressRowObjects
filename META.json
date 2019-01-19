@@ -1,5 +1,5 @@
 {
-   "abstract" : "Teng::Plugin::TmpSuppressRowObjects",
+   "abstract" : "add methods with temporary use of suppress_row_objects",
    "author" : [
       "egawata <egawa.takashi@gmail.com>"
    ],
@@ -42,6 +42,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Teng" : "0",
             "perl" : "5.008001"
          }
       },
@@ -52,6 +53,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/egawata/Teng-Plugin-TmpSuppressRowObjects/issues"
+      },
+      "homepage" : "https://github.com/egawata/Teng-Plugin-TmpSuppressRowObjects",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/egawata/Teng-Plugin-TmpSuppressRowObjects.git",
+         "web" : "https://github.com/egawata/Teng-Plugin-TmpSuppressRowObjects"
+      }
+   },
    "version" : "0.01",
    "x_serialization_backend" : "JSON::PP version 2.97001",
    "x_static_install" : 1

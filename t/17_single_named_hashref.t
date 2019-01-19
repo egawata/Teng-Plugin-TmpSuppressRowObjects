@@ -2,6 +2,8 @@ use strict;
 use warnings;
 use utf8;
 
+use lib qw(lib t/lib .);
+
 use t::Util;
 use Test::More;
 
