@@ -51,13 +51,13 @@ Teng::Plugin::TmpSuppressRowObjects - add methods with temporary use of suppress
 
     #  In case suppress_row_objects = 0 ...
     my $teng = Your::Model->new(dbh => $dbh, suppress_row_objects => 0);
-    my $row;
+    my @rows;
 
     #  same usage with original 'search'
-    $row = $teng->search_hashref(test_table => +{ id => 100 });     #  $row is hashref
+    @rows = $teng->search_hashref(test_table => +{ id => 100 });     #  elements in @rows are hashref
 
     #  does not affect original 'search'
-    $row = $teng->search(test_table => +{ id => 100 });     #  $row is row object
+    @rows = $teng->search(test_table => +{ id => 100 });     #  elements in @rows are row object
 
 
 =head1 DESCRIPTION
