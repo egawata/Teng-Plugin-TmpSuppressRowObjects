@@ -23,8 +23,8 @@ Teng::Plugin::TmpSuppressRowObjects - add methods with temporary use of suppress
 
 # DESCRIPTION
 
-This plugin adds some methods, which suppress generating row objects, even when `suppress_row_objects` is 0.
-It is helpful when we want to use row objects in default, but temporarily use hashref to improve performance.
+This plugin adds some methods, which return hashref as a result, rather than row objects, even when `suppress_row_objects` is 0.
+It is useful when we want row objects as default, and lightweight hashref in some cases to improve performance.
 
 # METHODS
 
