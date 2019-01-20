@@ -2,6 +2,9 @@ Revision history for Perl extension Teng-Plugin-TmpSuppressRowObjects
 
 {{$NEXT}}
 
+0.03 2019-01-20T03:24:57Z
+    - improve performance of search_by_sql_hashref
+
 0.02 2019-01-19T04:34:23Z
     - update synopsis
 
