@@ -49,7 +49,7 @@ __END__
 
 =head1 NAME
 
-Teng::Plugin::TmpSuppressRowObjects - add methods with temporaly use of suppress_row_objects
+Teng::Plugin::TmpSuppressRowObjects - add methods with temporary use of suppress_row_objects
 
 =head1 SYNOPSIS
 
