@@ -10,12 +10,11 @@ our @EXPORT;
 {
     my @origs = qw(
         insert
-        search
         single
-        search_by_sql
         single_by_sql
-        search_named
         single_named
+        search
+        search_named
     );
     my $suffix = '_hashref';
 
@@ -29,7 +28,19 @@ our @EXPORT;
             $self->$orig(@_);
         };
     }
+    push @EXPORT, qw(
+        search_by_sql_hashref
+    );
 }
+
+sub search_by_sql_hashref {
+    my ($self, $sql, $bind, $table_name) = @_;
+
+    wantarray and return $self->dbh->selectall_array($sql, +{ Slice => +{} }, @$bind);
+    local $self->{suppress_row_objects} = 1;
+    $self->search_by_sql($sql, $bind, $table_name);
+}
+
 
 1;
 __END__
