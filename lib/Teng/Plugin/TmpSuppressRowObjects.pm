@@ -36,7 +36,7 @@ our @EXPORT;
 sub search_by_sql_hashref {
     my ($self, $sql, $bind, $table_name) = @_;
 
-    wantarray and return $self->dbh->selectall_array($sql, +{ Slice => +{} }, @$bind);
+    wantarray and return @{ $self->dbh->selectall_arrayref($sql, +{ Slice => +{} }, @$bind) };
     local $self->{suppress_row_objects} = 1;
     $self->search_by_sql($sql, $bind, $table_name);
 }
